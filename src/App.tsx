@@ -26,7 +26,7 @@ const HomePage = () => (
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/Tucidide-Consulting-Crew">
       <ScrollToTop />
       <div className="relative min-h-screen">
         <div className="noise" />
