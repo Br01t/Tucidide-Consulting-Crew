@@ -61,7 +61,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       whileHover={{ y: -5, transition: { duration: 0.3 } }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.6 }}
-      className="group relative bg-white/[0.03] border border-white/10 overflow-hidden hover:border-azure transition-all duration-500 aspect-[4/5]"
+      className="group relative bg-white/[0.03] border border-white/10 overflow-hidden hover:border-azure transition-all duration-500 aspect-[4/5] sm:aspect-square lg:aspect-[4/5]"
     >
       {/* Background Masked Image with Zoom and Smooth Fading */}
       <div className="absolute inset-0 z-0">
@@ -71,10 +71,10 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           onLoad={() => setIsLoaded(true)}
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ 
-            opacity: isLoaded ? 0.1 : 0, 
+            opacity: isLoaded ? 0.12 : 0, 
             scale: isLoaded ? 1 : 1.1 
           }}
-          whileHover={{ scale: 1.1, opacity: 0.2 }}
+          whileHover={{ scale: 1.05, opacity: 0.2 }}
           transition={{ 
             opacity: { duration: 0.8 }, 
             scale: { duration: 1.2, ease: "easeOut" },
@@ -90,32 +90,32 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       </div>
 
       {/* Card Content with staggered fade-in elements */}
-      <div className="absolute inset-0 p-10 flex flex-col justify-between z-10">
+      <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-between z-10">
         <motion.div
           whileHover={{ x: 5 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="w-12 h-12 border border-violet/30 flex items-center justify-center text-violet mb-6 relative group-hover:border-azure group-hover:text-azure transition-colors duration-500">
+          <div className="w-10 h-10 md:w-12 md:h-12 border border-violet/30 flex items-center justify-center text-violet mb-4 md:mb-6 relative group-hover:border-azure group-hover:text-azure transition-colors duration-500">
              {/* Subtle Glow Effect on Hover */}
              <div className="absolute inset-0 bg-azure/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700" />
              <CategoryIcon category={project.category} />
           </div>
-          <h3 className="text-2xl font-serif uppercase tracking-wider text-ink mb-2">
+          <h3 className="text-xl md:text-2xl font-serif uppercase tracking-wider text-ink mb-1 md:mb-2">
             {project.title}
           </h3>
-          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-azure opacity-60">
+          <span className="text-[9px] md:text-[10px] font-bold tracking-[0.3em] uppercase text-azure opacity-60">
             {project.category}
           </span>
         </motion.div>
         
-        <div className="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-75">
-          <p className="text-xs text-slate-400 font-light leading-relaxed mb-8">
+        <div className="transform translate-y-4 lg:group-hover:translate-y-0 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-all duration-500 delay-75">
+          <p className="text-[10px] md:text-xs text-slate-400 font-light leading-relaxed mb-6 md:mb-8 line-clamp-3 lg:line-clamp-none">
             {project.description}
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-3 md:gap-4">
             <Link 
               to={`/portfolio/${project.id}`}
-              className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-white border-b border-white/30 hover:border-azure transition-colors"
+              className="inline-block text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-white border-b border-white/30 hover:border-azure transition-colors"
             >
               Vedi Progetto
             </Link>
@@ -123,7 +123,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block text-[10px] font-bold uppercase tracking-[0.2em] text-azure border-b border-azure/30 hover:border-white transition-colors"
+              className="inline-block text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-azure border-b border-azure/30 hover:border-white transition-colors"
             >
               Apri Sito
             </a>
@@ -144,40 +144,40 @@ const Portfolio = ({ limit }: PortfolioProps) => {
   const displayedProjects = limit ? projects.slice(0, limit) : projects;
 
   return (
-    <section id="ta-erga" className="relative py-24 px-12">
+    <section id="ta-erga" className="relative py-20 md:py-32 px-6 md:px-12">
       <div className="container mx-auto">
-        <div className="mb-20">
+        <div className="mb-16 md:mb-20">
            <span className="text-azure text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">Archivio Progetti // Ta Erga</span>
-           <h2 className="text-5xl md:text-7xl font-serif font-black uppercase tracking-tight mb-8">
+           <h2 className="text-3xl sm:text-5xl md:text-7xl font-serif font-black uppercase tracking-tight mb-6 md:mb-8">
               Il Nostro Portfolio<br/><span className="opacity-20 italic">The Works</span>
            </h2>
-           <div className="h-[1px] w-24 bg-copper/50 mb-8" />
-           <p className="text-slate-500 max-w-sm text-xs uppercase tracking-[0.2em] leading-loose">
+           <div className="h-[1px] w-16 md:w-24 bg-copper/50 mb-6 md:mb-8" />
+           <p className="text-slate-500 max-w-sm text-[10px] md:text-xs uppercase tracking-[0.2em] leading-loose">
               Architetture digitali su misura costruite sulle fondamenta immutabili della proporzione estetica antica.
            </p>
         </div>
 
         {/* Steles Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {displayedProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
 
         {limit && projects.length > limit && (
-          <div className="mt-20 flex justify-center">
+          <div className="mt-16 md:mt-20 flex justify-center">
              <Link 
               to="/portfolio"
-              className="group flex items-center gap-6 px-12 py-6 border border-white/10 hover:border-azure transition-all relative overflow-hidden"
+              className="group flex flex-col sm:flex-row items-center gap-4 sm:gap-6 px-10 md:px-12 py-5 md:py-6 border border-white/10 hover:border-azure transition-all relative overflow-hidden"
              >
-                <span className="text-xs font-bold uppercase tracking-[0.3em] text-white group-hover:text-azure transition-colors">Vedi Tutti i Progetti</span>
-                <div className="w-12 h-[1px] bg-azure group-hover:w-20 transition-all" />
+                <span className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-white group-hover:text-azure transition-colors">Vedi Tutti i Progetti</span>
+                <div className="w-8 sm:w-12 h-[1px] bg-azure group-hover:w-20 transition-all" />
              </Link>
           </div>
         )}
       </div>
       
-      <div className="mt-32 opacity-20 text-[9px] tracking-[0.1em] text-center">
+      <div className="mt-24 md:mt-32 opacity-20 text-[8px] md:text-[9px] tracking-[0.1em] text-center px-6">
          MODERNISMO ASSIOMATICO // TUTTI I DIRITTI RISERVATI // © 2024
       </div>
     </section>

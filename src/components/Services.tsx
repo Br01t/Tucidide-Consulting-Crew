@@ -27,16 +27,16 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="relative py-32 px-12 bg-obsidian/50 border-y border-white/5">
+    <section className="relative py-20 md:py-32 px-6 md:px-12 bg-obsidian/50 border-y border-white/5">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 md:mb-24 gap-8 md:gap-12">
           <div className="max-w-2xl">
             <span className="text-violet text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">Servizi // Hai Techne</span>
-            <h2 className="text-4xl md:text-6xl font-serif font-black uppercase leading-tight">
-              Ingeneria Estetica<br/>Per il Domani
+            <h2 className="text-3xl md:text-6xl font-serif font-black uppercase leading-tight">
+              Ingegneria Estetica<br/>Per il Domani
             </h2>
           </div>
-          <p className="text-slate-400 text-sm tracking-[0.1em] leading-relaxed max-w-sm border-l border-azure/30 pl-8">
+          <p className="text-slate-400 text-xs md:text-sm tracking-[0.1em] leading-relaxed max-w-sm border-l border-azure/30 pl-6 md:pl-8">
             Trasformiamo la complessità in chiarezza assiomatica, costruendo strumenti che resistono al tempo come monumenti di codice.
           </p>
         </div>

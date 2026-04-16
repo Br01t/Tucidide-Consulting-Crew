@@ -3,30 +3,32 @@ import { motion } from 'motion/react';
 
 const About = () => {
   return (
-    <div className="pt-32 pb-24 px-12">
+    <div className="pt-24 md:pt-32 pb-24 px-6 md:px-12">
       <div className="container mx-auto">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl mx-auto lg:mx-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
           >
             <span className="text-azure text-[10px] font-bold tracking-[0.4em] uppercase mb-4 block">Vision // Chi Siamo</span>
-            <h1 className="text-5xl md:text-8xl font-serif font-black uppercase tracking-tight mb-12">
+            <h1 className="text-3xl sm:text-5xl md:text-8xl font-serif font-black uppercase tracking-tight mb-8 md:mb-12">
               Saggezza Antica,<br/>Logica <span className="italic opacity-30">Digitale</span>
             </h1>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-center md:text-left"
             >
-              <p className="text-xl text-ink font-light leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-ink font-light leading-relaxed mb-8">
                 Tucidide Consulting Crew è un collettivo di creativi e tecnologi che crede che il futuro non debba essere inventato, ma "dissotterrato".
               </p>
-              <p className="text-slate-400 leading-relaxed mb-8">
+              <p className="text-slate-400 text-sm md:text-base leading-relaxed mb-8">
                 Ci ispiriamo alla precisione millimetrica della storiografia classica e alla proporzione estetica del mondo antico per costruire sistemi digitali che non siano solo funzionali, ma monumentali. 
                 Il nostro approccio, denominato "Archeologia Digitale", estrae logicamente i principi della strategia e dell'arte antica per applicarli alle sfide computazionali moderne.
               </p>
@@ -103,12 +105,12 @@ const About = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          className="mt-32 p-16 glass border border-azure/20 text-center rounded-3xl"
+          className="mt-24 md:mt-32 p-8 md:p-16 glass border border-azure/20 text-center rounded-3xl"
         >
-          <h2 className="text-3xl md:text-5xl font-serif italic mb-8">
+          <h2 className="text-2xl md:text-5xl font-serif italic mb-6 md:mb-8 text-white">
             "Il segreto della felicità è la libertà, ed il segreto della libertà è il coraggio."
           </h2>
-          <span className="text-xs uppercase tracking-[0.4em] font-bold text-azure">- Pericle (via Tucidide)</span>
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] font-bold text-azure">- Pericle (via Tucidide)</span>
         </motion.div>
       </div>
     </div>

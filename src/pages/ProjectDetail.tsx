@@ -14,42 +14,43 @@ const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <div className="pt-32 px-12 text-center">
-        <h1 className="text-4xl font-serif">Progetto non trovato</h1>
+      <div className="pt-32 px-6 md:px-12 text-center">
+        <h1 className="text-3xl md:text-4xl font-serif">Progetto non trovato</h1>
         <Link to="/portfolio" className="text-azure underline mt-4 inline-block">Torna al Portfolio</Link>
       </div>
     );
   }
 
   return (
-    <div className="pt-32 pb-24 px-12">
+    <div className="pt-24 md:pt-32 pb-24 px-6 md:px-12">
       <div className="container mx-auto">
         <Link 
           to="/portfolio" 
-          className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 hover:text-white transition-colors mb-12"
+          className="flex items-center gap-2 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 hover:text-white transition-colors mb-8 md:mb-12"
         >
           <ArrowLeft className="w-4 h-4" />
           Torna al Portfolio
         </Link>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="order-2 lg:order-1"
           >
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 border border-violet flex items-center justify-center text-xl font-bold text-violet">
+              <div className="w-10 h-10 md:w-12 md:h-12 border border-violet flex items-center justify-center text-lg md:text-xl font-bold text-violet">
                 {project.iconText}
               </div>
-              <span className="text-xs font-bold tracking-[0.4em] uppercase text-azure">{project.category}</span>
+              <span className="text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase text-azure">{project.category}</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-serif font-black uppercase mb-8 leading-[1.1]">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-serif font-black uppercase mb-8 leading-tight">
               {project.title}
             </h1>
             
-            <p className="text-xl text-ink font-light leading-relaxed mb-12 border-l-2 border-copper/30 pl-8">
+            <p className="text-base md:text-xl text-ink font-light leading-relaxed mb-12 border-l-2 border-copper/30 pl-6 md:pl-8">
               {project.fullDescription}
             </p>
 
@@ -59,11 +60,11 @@ const ProjectDetail = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-4 bg-azure hover:bg-violet text-white font-bold py-6 px-10 rounded-full transition-all duration-300 shadow-lg shadow-azure/20 mb-12"
+                className="inline-flex items-center gap-4 bg-azure hover:bg-violet text-white font-bold py-4 md:py-6 px-8 md:px-10 rounded-full transition-all duration-300 shadow-lg shadow-azure/20 mb-12 text-xs md:text-base w-full sm:w-auto justify-center"
             >
               <span>VISITA IL SITO</span>
-              <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                <ArrowLeft className="w-4 h-4 rotate-135" />
+              <div className="w-8 h-8 md:w-10 md:h-10 bg-white/20 rounded-full flex items-center justify-center">
+                <ArrowLeft className="w-3 h-3 md:w-4 md:h-4 rotate-135" />
               </div>
             </motion.a>
 
